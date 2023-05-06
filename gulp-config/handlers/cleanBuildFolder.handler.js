@@ -3,4 +3,4 @@ import clean from 'gulp-clean'
 
 const { src } = gulp
 
-export const cleanBuildFolder = () => src('build').pipe(clean())
+export const handleCleanBuildFolder = () => src('build').pipe(clean())

@@ -1,7 +1,7 @@
-import { cleanBuildFolder } from "./cleanBuildFolder.handler.js"
+import { handleCleanBuildFolder } from "./cleanBuildFolder.handler.js"
 import { handleHtml } from "./html.handler.js"
 
 export default {
-    cleanBuildFolder,
+    handleCleanBuildFolder,
     handleHtml
 }

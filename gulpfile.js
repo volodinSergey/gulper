@@ -1,8 +1,11 @@
 import gulp from 'gulp'
+
 import handlers from './gulp-config/handlers/index.js'
 
 import browserSync from 'browser-sync'
-import { pathsConfig, buildFolder } from './gulp-config/paths.config.js'
+
+import { pathsConfig } from './gulp-config/paths.config.js'
+import { browsersyncPlugin } from './gulp-config/plugins.config.js'
 
 const { watch, series, parallel } = gulp
 
@@ -13,13 +16,7 @@ const {
     handleScripts
 } = handlers
 
-const handleBrowserSync = () => {
-    browserSync.init({
-        server: {
-            baseDir: buildFolder
-        }
-    })
-}
+const handleBrowserSync = () => browserSync.init(browsersyncPlugin)
 
 const handleWatching = () => {
     watch([pathsConfig.watching.html], handleHtml)

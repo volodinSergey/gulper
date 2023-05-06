@@ -3,7 +3,7 @@ import handlers from './gulp-config/handlers/index.js'
 
 import browserSync from 'browser-sync'
 
-const { src, series, parallel } = gulp
+const { src, watch, series, parallel } = gulp
 
 const { handleCleanBuildFolder, handleHtml } = handlers
 
@@ -15,7 +15,15 @@ const handleBrowserSync = () => {
     })
 }
 
-const parallelStream = parallel(handleHtml, handleBrowserSync)
+const handleWatching = () => {
+    watch(['./#src/**/*.html'], handleHtml)
+}
+
+const parallelStream = parallel(
+    handleHtml,
+    handleWatching,
+    handleBrowserSync
+)
 
 const mainStream = series(handleCleanBuildFolder, parallelStream)
 

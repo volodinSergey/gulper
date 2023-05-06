@@ -5,7 +5,11 @@ import browserSync from 'browser-sync'
 
 const { src, watch, series, parallel } = gulp
 
-const { handleCleanBuildFolder, handleHtml } = handlers
+const {
+    handleCleanBuildFolder,
+    handleHtml,
+    handleStyles
+} = handlers
 
 const handleBrowserSync = () => {
     browserSync.init({
@@ -16,11 +20,13 @@ const handleBrowserSync = () => {
 }
 
 const handleWatching = () => {
-    watch(['./#src/**/*.html'], handleHtml)
+    watch(['./#src/pages/*.html'], handleHtml)
+    watch(['./#src/styles/**/*.scss'], handleStyles)
 }
 
 const parallelStream = parallel(
     handleHtml,
+    handleStyles,
     handleWatching,
     handleBrowserSync
 )

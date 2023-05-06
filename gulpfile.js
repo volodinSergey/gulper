@@ -23,7 +23,7 @@ const handleBrowserSync = () => {
 
 const handleWatching = () => {
     watch([pathsConfig.watching.html], handleHtml)
-    watch(['./#src/styles/**/*.scss'], handleStyles)
+    watch([pathsConfig.watching.styles], handleStyles)
     watch([pathsConfig.watching.scripts], handleScripts)
 }
 

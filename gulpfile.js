@@ -1,7 +1,6 @@
-import clean from 'gulp-clean'
 import gulp from 'gulp'
+import handlers from './gulp-config/handlers/index.js'
 
 const { src } = gulp
-const cleanBuildFolder = () => src('build').pipe(clean())
 
-export { cleanBuildFolder }
+const { cleanBuildFolder, handleHtml } = handlers

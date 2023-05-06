@@ -9,6 +9,7 @@
   "type": "module",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-clean": "^0.4.0"
+    "gulp-clean": "^0.4.0",
+    "gulp-file-include": "^2.3.0"
   }
 }

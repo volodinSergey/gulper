@@ -1,0 +1,13 @@
+{
+  "name": "gulpify",
+  "version": "0.0.0",
+  "description": "Gulp assembly for fast, pleasent and convenient site layout",
+  "main": "index.js",
+  "repository": "github.com/volodinSergey/gulpify",
+  "author": "Volodin Sergey",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}

@@ -2,6 +2,7 @@ import gulp from 'gulp'
 import handlers from './gulp-config/handlers/index.js'
 
 import browserSync from 'browser-sync'
+import { pathsConfig, buildFolder } from './gulp-config/paths.config.js'
 
 const { watch, series, parallel } = gulp
 
@@ -15,15 +16,15 @@ const {
 const handleBrowserSync = () => {
     browserSync.init({
         server: {
-            baseDir: './build/'
+            baseDir: buildFolder
         }
     })
 }
 
 const handleWatching = () => {
-    watch(['./#src/pages/*.html'], handleHtml)
+    watch([pathsConfig.watching.html], handleHtml)
     watch(['./#src/styles/**/*.scss'], handleStyles)
-    watch(['./#src/scripts/**/*.js'], handleScripts)
+    watch([pathsConfig.watching.scripts], handleScripts)
 }
 
 const parallelStream = parallel(

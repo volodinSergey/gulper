@@ -1,2 +1,3 @@
-const test = () => console.log('I am test js function')
+const test = () => console.log('I')
+
 export { test }

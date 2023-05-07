@@ -14,6 +14,10 @@ import { pathsConfig } from '../paths.config.js'
 const { src, dest } = gulp
 const scss = gulpSass(dartSass)
 
+/**
+ * @function handleStyles
+ * @description Handler for styles
+ */
 export const handleStyles = () => src(pathsConfig.src.styles)
     .pipe(authoprefixer(authoprefixerPlugin))
     .pipe(concat(concatPlugin.concatedFileName))

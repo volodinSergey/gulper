@@ -17,8 +17,16 @@ const {
     handleImages
 } = handlers
 
+/**
+ * @function handleBrowserSync
+ * @description Activates browsersync 
+ */
 const handleBrowserSync = () => browserSync.init(browsersyncPlugin)
 
+/**
+ * @function handleWatching
+ * @description Watches paths and uses handlers something changes 
+ */
 const handleWatching = () => {
     watch([pathsConfig.watching.html], handleHtml)
     watch([pathsConfig.watching.styles], handleStyles)

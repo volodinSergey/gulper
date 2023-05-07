@@ -13,7 +13,8 @@ const {
     handleCleanBuildFolder,
     handleHtml,
     handleStyles,
-    handleScripts
+    handleScripts,
+    handleImages
 } = handlers
 
 const handleBrowserSync = () => browserSync.init(browsersyncPlugin)
@@ -22,12 +23,14 @@ const handleWatching = () => {
     watch([pathsConfig.watching.html], handleHtml)
     watch([pathsConfig.watching.styles], handleStyles)
     watch([pathsConfig.watching.scripts], handleScripts)
+    watch([pathsConfig.watching.images], handleImages)
 }
 
 const parallelStream = parallel(
     handleHtml,
     handleStyles,
     handleScripts,
+    handleImages,
     handleWatching,
     handleBrowserSync
 )

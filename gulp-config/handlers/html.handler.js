@@ -7,6 +7,10 @@ import { pathsConfig } from '../paths.config.js'
 
 const { src, dest } = gulp
 
+/**
+ * @function handleHtml
+ * @description Handler for html
+ */
 export const handleHtml = () => src(pathsConfig.src.html)
     .pipe(fileInclude())
     .pipe(replace(/@images\//g, 'images/'))
